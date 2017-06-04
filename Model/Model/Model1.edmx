@@ -9,12 +9,22 @@
     <EntitySet Name="T_userSet" EntityType="Model1.Store.T_userSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="T_sexSet" EntityType="Model1.Store.T_sexSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="T_HFSet" EntityType="Model1.Store.T_HFSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="t_BMSet" EntityType="Model1.Store.t_BMSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="T_xlSet" EntityType="Model1.Store.T_xlSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="T_sexT_user" Association="Model1.Store.T_sexT_user">
       <End Role="T_sex" EntitySet="T_sexSet" />
       <End Role="T_user" EntitySet="T_userSet" />
     </AssociationSet>
     <AssociationSet Name="T_HFT_user" Association="Model1.Store.T_HFT_user">
       <End Role="T_HF" EntitySet="T_HFSet" />
+      <End Role="T_user" EntitySet="T_userSet" />
+    </AssociationSet>
+    <AssociationSet Name="t_BMT_user" Association="Model1.Store.t_BMT_user">
+      <End Role="t_BM" EntitySet="t_BMSet" />
+      <End Role="T_user" EntitySet="T_userSet" />
+    </AssociationSet>
+    <AssociationSet Name="T_xlT_user" Association="Model1.Store.T_xlT_user">
+      <End Role="T_xl" EntitySet="T_xlSet" />
       <End Role="T_user" EntitySet="T_userSet" />
     </AssociationSet>
   </EntityContainer>
@@ -27,20 +37,39 @@
     <Property Name="rs_name" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="T_sexId" Type="int" Nullable="false" />
     <Property Name="T_HFId" Type="int" Nullable="false" />
+    <Property Name="t_BMBM_no" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="T_xlId" Type="int" Nullable="false" />
+    <Property Name="Memo" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="T_sexSet">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="sex_name" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="T_HFSet">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="HF_name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_BMSet">
+    <Key>
+      <PropertyRef Name="BM_no" />
+    </Key>
+    <Property Name="id" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BM_no" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="BM_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Memo" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_xlSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="XL_name" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="T_sexT_user">
     <End Role="T_sex" Type="Model1.Store.T_sexSet" Multiplicity="1" />
@@ -66,6 +95,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="t_BMT_user">
+    <End Role="t_BM" Type="Model1.Store.t_BMSet" Multiplicity="1" />
+    <End Role="T_user" Type="Model1.Store.T_userSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_BM">
+        <PropertyRef Name="BM_no" />
+      </Principal>
+      <Dependent Role="T_user">
+        <PropertyRef Name="t_BMBM_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="T_xlT_user">
+    <End Role="T_xl" Type="Model1.Store.T_xlSet" Multiplicity="1" />
+    <End Role="T_user" Type="Model1.Store.T_userSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_xl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="T_user">
+        <PropertyRef Name="T_xlId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -80,6 +133,16 @@
           <EntitySet Name="T_HFSet" EntityType="Model1.T_HF" />
           <AssociationSet Name="T_HFT_user" Association="Model1.T_HFT_user">
             <End Role="T_HF" EntitySet="T_HFSet" />
+            <End Role="T_user" EntitySet="T_userSet" />
+          </AssociationSet>
+          <EntitySet Name="t_BMSet" EntityType="Model1.t_BM" />
+          <AssociationSet Name="t_BMT_user" Association="Model1.t_BMT_user">
+            <End Role="t_BM" EntitySet="t_BMSet" />
+            <End Role="T_user" EntitySet="T_userSet" />
+          </AssociationSet>
+          <EntitySet Name="T_xlSet" EntityType="Model1.T_xl" />
+          <AssociationSet Name="T_xlT_user" Association="Model1.T_xlT_user">
+            <End Role="T_xl" EntitySet="T_xlSet" />
             <End Role="T_user" EntitySet="T_userSet" />
           </AssociationSet>
         </EntityContainer>
@@ -103,17 +166,27 @@
             </Documentation>
           </Property>
           <NavigationProperty Name="T_sex" Relationship="Model1.T_sexT_user" FromRole="T_user" ToRole="T_sex" />
-          <Property Name="T_sexId" Type="Int32" Nullable="false" />
+          <Property Name="T_sexId" Type="Int32" Nullable="false" cg:GetterAccess="Private" cg:SetterAccess="Private" />
           <NavigationProperty Name="T_HF" Relationship="Model1.T_HFT_user" FromRole="T_user" ToRole="T_HF" />
-          <Property Name="T_HFId" Type="Int32" Nullable="false" />
+          <Property Name="T_HFId" Type="Int32" Nullable="false" cg:GetterAccess="Private" cg:SetterAccess="Private" />
+          <Property Name="t_BMBM_no" Type="String" Nullable="false" MaxLength="50" cg:GetterAccess="Private" cg:SetterAccess="Private" />
+          <Property Name="T_xlId" Type="Int32" Nullable="false" cg:GetterAccess="Private" cg:SetterAccess="Private" />
+          <Property Name="Memo" Type="String" Nullable="false" >
+            <Documentation>
+              <LongDescription>说明</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="t_BM" Relationship="Model1.t_BMT_user" FromRole="T_user" ToRole="t_BM" />
+          <NavigationProperty Name="T_xl" Relationship="Model1.T_xlT_user" FromRole="T_user" ToRole="T_xl" />
         </EntityType>
         <EntityType Name="T_sex">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="sex_name" Type="String" Nullable="false" >
             <Documentation>
+              <Summary>性别摘要</Summary>
               <LongDescription>性别</LongDescription>
             </Documentation>
           </Property>
@@ -135,7 +208,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="HF_name" Type="String" Nullable="false" >
             <Documentation>
               <LongDescription>婚否</LongDescription>
@@ -155,6 +228,61 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="t_BM">
+          <Key>
+            <PropertyRef Name="BM_no" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BM_no" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="50" >
+            <Documentation>
+              <Summary>部门编号</Summary>
+              <LongDescription>部门编号</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="BM_name" Type="String" Nullable="false" />
+          <NavigationProperty Name="T_user" Relationship="Model1.t_BMT_user" FromRole="t_BM" ToRole="T_user" />
+          <Property Name="Memo" Type="String" Nullable="false" >
+            <Documentation>
+              <LongDescription>说明</LongDescription>
+            </Documentation>
+          </Property>
+        </EntityType>
+        <Association Name="t_BMT_user">
+          <End Type="Model1.t_BM" Role="t_BM" Multiplicity="1" />
+          <End Type="Model1.T_user" Role="T_user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="t_BM">
+              <PropertyRef Name="BM_no" />
+            </Principal>
+            <Dependent Role="T_user">
+              <PropertyRef Name="t_BMBM_no" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="T_xl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="XL_name" Type="String" Nullable="false" >
+            <Documentation>
+              <LongDescription>学历</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="T_user" Relationship="Model1.T_xlT_user" FromRole="T_xl" ToRole="T_user" />
+        </EntityType>
+        <Association Name="T_xlT_user">
+          <End Type="Model1.T_xl" Role="T_xl" Multiplicity="1" />
+          <End Type="Model1.T_user" Role="T_user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_xl">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="T_user">
+              <PropertyRef Name="T_xlId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -169,6 +297,9 @@
           <ScalarProperty Name="rs_name" ColumnName="rs_name" />
           <ScalarProperty Name="T_sexId" ColumnName="T_sexId" />
           <ScalarProperty Name="T_HFId" ColumnName="T_HFId" />
+          <ScalarProperty Name="t_BMBM_no" ColumnName="t_BMBM_no" />
+          <ScalarProperty Name="T_xlId" ColumnName="T_xlId" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -185,6 +316,24 @@
         <MappingFragment StoreEntitySet="T_HFSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="HF_name" ColumnName="HF_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_BMSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.t_BM)">
+        <MappingFragment StoreEntitySet="t_BMSet">
+          <ScalarProperty Name="BM_no" ColumnName="BM_no" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="BM_name" ColumnName="BM_name" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_xlSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.T_xl)">
+        <MappingFragment StoreEntitySet="T_xlSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="XL_name" ColumnName="XL_name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

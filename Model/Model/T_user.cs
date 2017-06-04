@@ -17,10 +17,15 @@ namespace Model
         public int id { get; set; }
         public string RS_no { get; set; }
         public string rs_name { get; set; }
-        public int T_sexId { get; set; }
-        public int T_HFId { get; set; }
+        private int T_sexId { get; set; }
+        private int T_HFId { get; set; }
+        private string t_BMBM_no { get; set; }
+        private int T_xlId { get; set; }
+        public string Memo { get; set; }
     
         public virtual T_sex T_sex { get; set; }
         public virtual T_HF T_HF { get; set; }
+        public virtual t_BM t_BM { get; set; }
+        public virtual T_xl T_xl { get; set; }
     }
 }

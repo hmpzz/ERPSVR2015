@@ -4,12 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c39ec2b13cb34cf2b9e00f4d2896a5eb" Name="Diagram1" >
-        <EntityTypeShape EntityType="Model1.T_user" Width="1.5" PointX="2.125" PointY="0.625" />
-        <EntityTypeShape EntityType="Model1.T_sex" Width="1.5" PointX="2" PointY="3.75" />
+      <Diagram DiagramId="c39ec2b13cb34cf2b9e00f4d2896a5eb" Name="Diagram1" ZoomLevel="74" >
+        <EntityTypeShape EntityType="Model1.T_user" Width="1.5" PointX="3.375" PointY="0.625" />
+        <EntityTypeShape EntityType="Model1.T_sex" Width="1.5" PointX="0.5" PointY="4.25" />
         <AssociationConnector Association="Model1.T_sexT_user" />
-        <EntityTypeShape EntityType="Model1.T_HF" Width="1.5" PointX="4" PointY="3.75" />
+        <EntityTypeShape EntityType="Model1.T_HF" Width="1.5" PointX="0.5" PointY="0.625" />
         <AssociationConnector Association="Model1.T_HFT_user" />
+        <EntityTypeShape EntityType="Model1.t_BM" Width="1.5" PointX="5.75" PointY="0.625" />
+        <AssociationConnector Association="Model1.t_BMT_user" />
+        <EntityTypeShape EntityType="Model1.T_xl" Width="1.5" PointX="0.5" PointY="2.375" />
+        <AssociationConnector Association="Model1.T_xlT_user" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

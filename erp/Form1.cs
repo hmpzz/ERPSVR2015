@@ -16,5 +16,11 @@ namespace erp
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Model.T_user user = new Model.T_user();
+            
+        }
     }
 }

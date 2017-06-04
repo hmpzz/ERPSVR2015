@@ -28,5 +28,7 @@ namespace Model
         public virtual DbSet<T_user> T_userSet { get; set; }
         public virtual DbSet<T_sex> T_sexSet { get; set; }
         public virtual DbSet<T_HF> T_HFSet { get; set; }
+        public virtual DbSet<t_BM> t_BMSet { get; set; }
+        public virtual DbSet<T_xl> T_xlSet { get; set; }
     }
 }
