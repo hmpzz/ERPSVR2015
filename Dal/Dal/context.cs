@@ -13,8 +13,7 @@ namespace Dal
     public class Context:DbContext
     {
 
-        public static string connectionString;
-
+        
         public Context() : base(GetConnStr())
         {
             
@@ -30,18 +29,26 @@ namespace Dal
         public virtual DbSet<T_user> T_userSet { get; set; }
         public virtual DbSet<T_sex> T_sexSet { get; set; }
         public virtual DbSet<T_hf> T_HFSet { get; set; }
-        public virtual DbSet<t_BM> t_BMSet { get; set; }
+        public virtual DbSet<T_bm> t_BMSet { get; set; }
         public virtual DbSet<T_xl> T_xlSet { get; set; }
 
 
+
+
+        /// <summary>
+        /// 得到解密后的连接字符串
+        /// </summary>
+        /// <returns>返回解密后的连接字符串</returns>
         private static string GetConnStr()
         {
 
             Configuration config = System.Configuration.ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            //根据Key读取<add>元素的Value
+            //根据Key读取<connectionString>元素的Value
             string name = config.AppSettings.Settings["connectionString"].Value;
 
-            return Helper.SecurityHelper.DecryptDES(name);
+            string connstr= Helper.SecurityHelper.DecryptDES(name);
+
+            return connstr;
             
         }
     }

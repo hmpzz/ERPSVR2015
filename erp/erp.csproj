@@ -55,16 +55,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="MDIForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MDIForm.Designer.cs">
+      <DependentUpon>MDIForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MDIForm.resx">
+      <DependentUpon>MDIForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -93,10 +93,6 @@
     <ProjectReference Include="..\Bll\Bll\Bll.csproj">
       <Project>{970b6f31-1c76-480c-84ea-be04927c7d19}</Project>
       <Name>Bll</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Dal\Dal\Dal.csproj">
-      <Project>{b4bce945-ead6-436c-a348-a23d91bcd49d}</Project>
-      <Name>Dal</Name>
     </ProjectReference>
     <ProjectReference Include="..\Helper\Helper\Helper.csproj">
       <Project>{3144dcb5-ae3c-432a-95cb-08a58a531d1d}</Project>

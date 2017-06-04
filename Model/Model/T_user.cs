@@ -128,6 +128,6 @@ namespace Model
         /// <summary>
         /// 部门
         /// </summary>
-        public virtual T_BM BM { get; set; }
+        public virtual T_bm BM { get; set; }
     }
 }
