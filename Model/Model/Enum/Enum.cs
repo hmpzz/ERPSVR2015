@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Helper
+namespace Model
 {
-    public class Class1
+    public enum Stop_state:int
     {
+        停用=0,
+        启用=1
+
     }
 }

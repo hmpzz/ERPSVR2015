@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,6 +58,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Helper\Helper\Helper.csproj">
+      <Project>{3144dcb5-ae3c-432a-95cb-08a58a531d1d}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Model\Model\Model.csproj">
       <Project>{5580f7a7-7d28-4adc-8935-57ae48473f3f}</Project>
       <Name>Model</Name>
