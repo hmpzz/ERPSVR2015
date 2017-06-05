@@ -41,6 +41,7 @@ namespace Model
         /// <summary>
         /// 性别
         /// </summary>
+        [Required] //必填项
         public virtual T_sex sex { get; set; }
 
 
@@ -125,9 +126,8 @@ namespace Model
         public string HOME_address { get; set; }
 
 
-        /// <summary>
-        /// 部门
-        /// </summary>
-        public virtual T_bm BM { get; set; }
+
+        
+
     }
 }

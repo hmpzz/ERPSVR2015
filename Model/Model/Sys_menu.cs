@@ -18,10 +18,16 @@ namespace Model
     {
 
 
+        /// <summary>
+        /// 此实例对应的子类
+        /// </summary>
+        public Sys_Menu()
+        {
+            sub_Sys_menu = new HashSet<Sys_Menu>();
+        }
 
-        //menu_index = "0", Menu_No = "0", Father_No = "0", Menu_Name = "菜单", Menu_ID = "菜单", IN_User = 1 
         
-        
+
         /// <summary>        /// 菜单项编号        /// </summary>        [Key, Required] //主键
         public string Menu_NO { get; set; }
 
@@ -34,11 +40,17 @@ namespace Model
         /// <summary>        /// 对应的窗口ID        /// </summary>        [DefaultValue(""), Required] //默认值，必填项
         public string Menu_ID { get; set; }
 
-        
-        /// <summary>        /// 父菜单编号        /// </summary>        [ Required] //默认值，必填项
+
+        ///// <summary>
+        ///// 父菜单编号
+        ///// </summary>
+        [Required, MaxLength(128)] //默认值，必填项
         public string Father_No { get; set; }
 
+
         
+
+
         /// <summary>        /// 菜单索引        /// </summary>        [ Required] //默认值，必填项
         public string menu_index { get; set; }
 
@@ -52,7 +64,12 @@ namespace Model
         /// <summary>
         /// 对应的子项菜单 
         /// </summary>
-        public ICollection<Sys_Menu> Sys_menu { get; set; }
+        public virtual ICollection<Sys_Menu> sub_Sys_menu { get; set; }
+
+
+
+
+
     }
 
 
@@ -62,9 +79,16 @@ namespace Model
         public Sys_MenuMap()
         {
 
-            HasMany(d => d.Sys_menu)
+            HasMany(s => s.sub_Sys_menu)
                   .WithRequired()
                   .HasForeignKey(p => p.Father_No);
+
+
+
+
+
+            //this.HasMany(d => d.Sys_menu).WithRequired(p=> (Model.Sys_Menu)p.Sys_menu).Map(l => l.MapKey("Father_No1"));
+
         }
     }
 }
