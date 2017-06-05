@@ -48,11 +48,10 @@
             this.ID_公司基本信息 = new System.Windows.Forms.ToolStripMenuItem();
             this.ID_系统 = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.aaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.bbToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,26 +59,26 @@
             // 建立数据库ToolStripMenuItem
             // 
             this.建立数据库ToolStripMenuItem.Name = "建立数据库ToolStripMenuItem";
-            this.建立数据库ToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
+            this.建立数据库ToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.建立数据库ToolStripMenuItem.Text = "建立数据库";
             this.建立数据库ToolStripMenuItem.Click += new System.EventHandler(this.建立数据库ToolStripMenuItem_Click);
             // 
             // ID_层叠
             // 
             this.ID_层叠.Name = "ID_层叠";
-            this.ID_层叠.Size = new System.Drawing.Size(124, 22);
+            this.ID_层叠.Size = new System.Drawing.Size(144, 26);
             this.ID_层叠.Text = "层叠";
             // 
             // ID_垂直平铺
             // 
             this.ID_垂直平铺.Name = "ID_垂直平铺";
-            this.ID_垂直平铺.Size = new System.Drawing.Size(124, 22);
+            this.ID_垂直平铺.Size = new System.Drawing.Size(144, 26);
             this.ID_垂直平铺.Text = "垂直平铺";
             // 
             // ID_水平平铺
             // 
             this.ID_水平平铺.Name = "ID_水平平铺";
-            this.ID_水平平铺.Size = new System.Drawing.Size(124, 22);
+            this.ID_水平平铺.Size = new System.Drawing.Size(144, 26);
             this.ID_水平平铺.Text = "水平平铺";
             // 
             // ID_窗口
@@ -90,31 +89,31 @@
             this.ID_层叠,
             this.ID_排列窗口});
             this.ID_窗口.Name = "ID_窗口";
-            this.ID_窗口.Size = new System.Drawing.Size(44, 21);
+            this.ID_窗口.Size = new System.Drawing.Size(51, 24);
             this.ID_窗口.Text = "窗口";
             // 
             // ID_排列窗口
             // 
             this.ID_排列窗口.Name = "ID_排列窗口";
-            this.ID_排列窗口.Size = new System.Drawing.Size(124, 22);
+            this.ID_排列窗口.Size = new System.Drawing.Size(144, 26);
             this.ID_排列窗口.Text = "排列窗口";
             // 
             // ID_退出
             // 
             this.ID_退出.Name = "ID_退出";
-            this.ID_退出.Size = new System.Drawing.Size(124, 22);
+            this.ID_退出.Size = new System.Drawing.Size(144, 26);
             this.ID_退出.Text = "退出";
             // 
             // ID_注销
             // 
             this.ID_注销.Name = "ID_注销";
-            this.ID_注销.Size = new System.Drawing.Size(124, 22);
+            this.ID_注销.Size = new System.Drawing.Size(144, 26);
             this.ID_注销.Text = "注销";
             // 
             // ID_更改密码
             // 
             this.ID_更改密码.Name = "ID_更改密码";
-            this.ID_更改密码.Size = new System.Drawing.Size(124, 22);
+            this.ID_更改密码.Size = new System.Drawing.Size(144, 26);
             this.ID_更改密码.Text = "更改密码";
             // 
             // ID_视图
@@ -124,19 +123,19 @@
             this.ID_注销,
             this.ID_退出});
             this.ID_视图.Name = "ID_视图";
-            this.ID_视图.Size = new System.Drawing.Size(44, 21);
+            this.ID_视图.Size = new System.Drawing.Size(51, 24);
             this.ID_视图.Text = "视图";
             // 
             // ID_员工资料维护
             // 
             this.ID_员工资料维护.Name = "ID_员工资料维护";
-            this.ID_员工资料维护.Size = new System.Drawing.Size(148, 22);
+            this.ID_员工资料维护.Size = new System.Drawing.Size(174, 26);
             this.ID_员工资料维护.Text = "员工资料维护";
             // 
             // ID_部门资料维护
             // 
             this.ID_部门资料维护.Name = "ID_部门资料维护";
-            this.ID_部门资料维护.Size = new System.Drawing.Size(148, 22);
+            this.ID_部门资料维护.Size = new System.Drawing.Size(174, 26);
             this.ID_部门资料维护.Text = "部门资料维护";
             // 
             // ID_人事
@@ -145,36 +144,36 @@
             this.ID_部门资料维护,
             this.ID_员工资料维护});
             this.ID_人事.Name = "ID_人事";
-            this.ID_人事.Size = new System.Drawing.Size(44, 21);
+            this.ID_人事.Size = new System.Drawing.Size(51, 24);
             this.ID_人事.Text = "人事";
             // 
             // ID_系统用户权限
             // 
             this.ID_系统用户权限.Name = "ID_系统用户权限";
-            this.ID_系统用户权限.Size = new System.Drawing.Size(148, 22);
+            this.ID_系统用户权限.Size = new System.Drawing.Size(174, 26);
             this.ID_系统用户权限.Text = "系统用户权限";
             // 
             // ID_系统角色权限
             // 
             this.ID_系统角色权限.Name = "ID_系统角色权限";
-            this.ID_系统角色权限.Size = new System.Drawing.Size(148, 22);
+            this.ID_系统角色权限.Size = new System.Drawing.Size(174, 26);
             this.ID_系统角色权限.Text = "系统角色权限";
             // 
             // ToolStripMenuItem1
             // 
             this.ToolStripMenuItem1.Name = "ToolStripMenuItem1";
-            this.ToolStripMenuItem1.Size = new System.Drawing.Size(145, 6);
+            this.ToolStripMenuItem1.Size = new System.Drawing.Size(171, 6);
             // 
             // ID_月结日期设定
             // 
             this.ID_月结日期设定.Name = "ID_月结日期设定";
-            this.ID_月结日期设定.Size = new System.Drawing.Size(148, 22);
+            this.ID_月结日期设定.Size = new System.Drawing.Size(174, 26);
             this.ID_月结日期设定.Text = "月结日期设定";
             // 
             // ID_公司基本信息
             // 
             this.ID_公司基本信息.Name = "ID_公司基本信息";
-            this.ID_公司基本信息.Size = new System.Drawing.Size(148, 22);
+            this.ID_公司基本信息.Size = new System.Drawing.Size(174, 26);
             this.ID_公司基本信息.Text = "公司基本信息";
             // 
             // ID_系统
@@ -186,7 +185,7 @@
             this.ID_系统角色权限,
             this.ID_系统用户权限});
             this.ID_系统.Name = "ID_系统";
-            this.ID_系统.Size = new System.Drawing.Size(44, 21);
+            this.ID_系统.Size = new System.Drawing.Size(51, 24);
             this.ID_系统.Text = "系统";
             // 
             // MenuStrip1
@@ -198,20 +197,13 @@
             this.ID_视图,
             this.ID_窗口,
             this.建立数据库ToolStripMenuItem,
-            this.aaToolStripMenuItem,
-            this.bbToolStripMenuItem});
+            this.aaToolStripMenuItem});
             this.MenuStrip1.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip1.Name = "MenuStrip1";
-            this.MenuStrip1.Size = new System.Drawing.Size(504, 25);
+            this.MenuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.MenuStrip1.Size = new System.Drawing.Size(672, 28);
             this.MenuStrip1.TabIndex = 11;
             this.MenuStrip1.Text = "MenuStrip1";
-            // 
-            // aaToolStripMenuItem
-            // 
-            this.aaToolStripMenuItem.Name = "aaToolStripMenuItem";
-            this.aaToolStripMenuItem.Size = new System.Drawing.Size(34, 21);
-            this.aaToolStripMenuItem.Text = "aa";
-            this.aaToolStripMenuItem.Click += new System.EventHandler(this.aaToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -219,39 +211,38 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 392);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 492);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(504, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(672, 25);
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(56, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(69, 20);
             this.toolStripStatusLabel1.Text = "登录人：";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 20);
             // 
-            // bbToolStripMenuItem
+            // aaToolStripMenuItem
             // 
-            this.bbToolStripMenuItem.Name = "bbToolStripMenuItem";
-            this.bbToolStripMenuItem.Size = new System.Drawing.Size(36, 21);
-            this.bbToolStripMenuItem.Text = "bb";
+            this.aaToolStripMenuItem.Name = "aaToolStripMenuItem";
+            this.aaToolStripMenuItem.Size = new System.Drawing.Size(37, 24);
+            this.aaToolStripMenuItem.Text = "aa";
+            this.aaToolStripMenuItem.Click += new System.EventHandler(this.aaToolStripMenuItem_Click);
             // 
             // MDIForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 414);
+            this.ClientSize = new System.Drawing.Size(672, 517);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MenuStrip1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MDIForm";
             this.Text = "MDIForm";
             this.MenuStrip1.ResumeLayout(false);
@@ -289,7 +280,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripMenuItem aaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bbToolStripMenuItem;
     }
 }
 
