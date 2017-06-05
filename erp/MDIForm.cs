@@ -34,7 +34,6 @@ namespace erp
             Console.WriteLine(db.Sys_Menu.Max(d=>d.Menu_NO.Length));
             printSysMenu(SM);
 
-
             var ff = SM[0].father_menu.Menu_Name.ToString();
 
             //Console.WriteLine(SM[0].father_Sys_menu.Menu_NO);
