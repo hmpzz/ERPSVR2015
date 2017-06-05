@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,7 @@ namespace Model
         /// <summary>
         /// 性别
         /// </summary>
+        [Required] //必填项
         public virtual T_sex sex { get; set; }
 
 
@@ -125,9 +127,34 @@ namespace Model
         public string HOME_address { get; set; }
 
 
-        /// <summary>
-        /// 部门
-        /// </summary>
-        public virtual T_bm BM { get; set; }
+
+
+
+
+
+
+
+        /// <summary>        /// 家庭住址        /// </summary>        
+        public int sexid { get; set; }
+
+
+    }
+
+
+
+    public class T_userMap : EntityTypeConfiguration<T_user>
+    {
+        public T_userMap()
+        {
+
+            //HasMany(d => d.T_users)
+            //      .WithRequired()
+            //      .HasForeignKey(p => p.T_bm);
+
+
+            HasRequired(d => d.sex)
+                .WithMany(a => a.T_users)
+                .HasForeignKey(p => p.sexid);
+        }
     }
 }

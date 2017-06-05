@@ -16,6 +16,12 @@ namespace Model
     public class T_sex
     {
 
+        public T_sex()
+        {
+            T_users = new HashSet<T_user>();
+        }
+
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //自增长列
         public int id { get; set; }
 
@@ -35,7 +41,7 @@ namespace Model
         /// <summary>
         /// 对应的员工对象
         /// </summary>
-        public virtual ICollection<T_user> T_user { get; set; }
+        public virtual ICollection<T_user> T_users { get; set; }
 
     }
 
@@ -44,9 +50,9 @@ namespace Model
         public T_sexMap()
         {
 
-          HasMany(d =>d.T_user)
-                .WithRequired()
-                .HasForeignKey(p => p.sex);
+            HasMany(u => u.T_users)
+                  .WithRequired(s => s.sex)
+                  .Map(p => p.MapKey("sexid"));
         }
     }
 

@@ -94,6 +94,10 @@
       <Project>{970b6f31-1c76-480c-84ea-be04927c7d19}</Project>
       <Name>Bll</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Dal\Dal\Dal.csproj">
+      <Project>{b4bce945-ead6-436c-a348-a23d91bcd49d}</Project>
+      <Name>Dal</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Helper\Helper\Helper.csproj">
       <Project>{3144dcb5-ae3c-432a-95cb-08a58a531d1d}</Project>
       <Name>Helper</Name>
