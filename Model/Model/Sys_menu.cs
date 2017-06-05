@@ -28,16 +28,25 @@ namespace Model
 
         
 
-        /// <summary>        /// 菜单项编号        /// </summary>        [Key, Required,MaxLength(128)] //主键
+        /// <summary>
+        /// 菜单项编号
+        /// </summary>
+        [Key, Required,MaxLength(128)] //主键
         public string Menu_NO { get; set; }
 
 
-        /// <summary>        /// 菜单项名称        /// </summary>        [ Required] //默认值，必填项
+        /// <summary>
+        /// 菜单项名称
+        /// </summary>
+        [ Required] //默认值，必填项
         public string Menu_Name { get; set; }
 
 
 
-        /// <summary>        /// 对应的窗口ID        /// </summary>        [DefaultValue(""), Required] //默认值，必填项
+        /// <summary>
+        /// 对应的窗口ID
+        /// </summary>
+        [DefaultValue(""), Required] //默认值，必填项
         public string Menu_ID { get; set; }
 
 
@@ -51,7 +60,10 @@ namespace Model
         
 
 
-        /// <summary>        /// 菜单索引        /// </summary>        [ Required] //默认值，必填项
+        /// <summary>
+        /// 菜单索引
+        /// </summary>
+        [ Required] //默认值，必填项
         public string menu_index { get; set; }
 
 

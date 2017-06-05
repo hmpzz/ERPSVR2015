@@ -50,9 +50,9 @@ namespace Model
         public T_sexMap()
         {
 
-            HasMany(u => u.T_users)
-                  .WithRequired(s => s.sex)
-                  .Map(p => p.MapKey("sexid"));
+            HasMany(d => d.T_users)
+            .WithRequired()
+            .HasForeignKey(p => p.sex);
         }
     }
 
