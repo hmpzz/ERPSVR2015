@@ -24,6 +24,9 @@ namespace Dal
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new Sys_MenuMap());
+
+            modelBuilder.Configurations.Add(new T_sexMap());
+            
         }
 
 

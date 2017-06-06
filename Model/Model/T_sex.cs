@@ -28,7 +28,7 @@ namespace Model
 
         
 
-        /// <summary>        /// 性别编号        /// </summary>        [Key, Required] //主键
+        /// <summary>        /// 性别编号        /// </summary>        [Required] 
         public int sex_no { get; set; }
         
 
@@ -51,8 +51,8 @@ namespace Model
         {
 
             HasMany(d => d.T_users)
-            .WithRequired()
-            .HasForeignKey(p => p.sex);
+            .WithRequired(d=>d.sex)
+            .HasForeignKey(p => p.sex_no);
         }
     }
 

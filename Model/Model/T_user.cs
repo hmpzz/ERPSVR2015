@@ -61,7 +61,15 @@ namespace Model
         public virtual T_sex sex { get; set; }
 
 
-        
+
+        /// <summary>
+        /// 性别编码
+        /// </summary>
+        [DefaultValue("")] //默认值
+        public int sex_no { get; set; }
+
+
+
 
         /// <summary>
         /// 婚否
