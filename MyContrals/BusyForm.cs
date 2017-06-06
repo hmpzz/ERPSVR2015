@@ -6,12 +6,12 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TX.Framework.WindowUI.Forms;
+
 
 namespace MyContrals
 {
 
-     public partial class BusyForm : BaseForm
+     public partial class BusyForm : Form
     {
 
         [DllImport("user32")]
@@ -57,16 +57,16 @@ namespace MyContrals
             this.label2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(8, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(4, 27);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 17);
+            this.label1.Size = new System.Drawing.Size(169, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "总用时:0天0小时0分0秒";
             // 
@@ -74,7 +74,7 @@ namespace MyContrals
             // 
             this.progressBar1.Location = new System.Drawing.Point(3, 3);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(394, 23);
+            this.progressBar1.Size = new System.Drawing.Size(383, 23);
             this.progressBar1.TabIndex = 6;
             // 
             // pictureBox1
@@ -99,7 +99,7 @@ namespace MyContrals
             this.label3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(9, 255);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 17);
+            this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 9;
             // 
             // splitContainer1
@@ -128,7 +128,6 @@ namespace MyContrals
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "BusyForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BusyForm_FormClosing);
             this.Load += new System.EventHandler(this.BusyForm_Load);

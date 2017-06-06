@@ -16,5 +16,19 @@ namespace erp
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dal.Context db = new Dal.Context();
+
+            var sex = db.T_sex.ToList();
+            //var SM = db.Sys_Menu.OrderBy(d => d.menu_index).Where(d => d.Menu_NO == "0").ToList();
+            //Console.WriteLine(db.Sys_Menu.Max(d => d.Menu_NO.Length));
+            //printSysMenu(SM);
+
+            this.exDataGridView1.DataSource = sex;
+            
+            this.exDataGridView1.AddColumn(sex.)
+        }
     }
 }
