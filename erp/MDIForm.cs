@@ -22,6 +22,8 @@ namespace erp
         {
             
             Bll.DataBase.CreateDataBase();
+
+            MessageBox.Show("建立完成！");
         }
 
         private void aaToolStripMenuItem_Click(object sender, EventArgs e)

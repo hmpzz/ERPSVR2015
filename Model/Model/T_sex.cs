@@ -16,11 +16,15 @@ namespace Model
     public class T_sex
     {
 
+ 
+
         public T_sex()
         {
             T_users = new HashSet<T_user>();
         }
 
+
+        #region T_sex属性
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //自增长列
         public int id { get; set; }
@@ -28,7 +32,7 @@ namespace Model
 
         
 
-        /// <summary>        /// 性别编号        /// </summary>        [Required] 
+        /// <summary>        /// 性别编号        /// </summary>        [Required,Key] 
         public int sex_no { get; set; }
         
 
@@ -43,6 +47,7 @@ namespace Model
         /// </summary>
         public virtual ICollection<T_user> T_users { get; set; }
 
+        #endregion
     }
 
     public class T_sexMap : EntityTypeConfiguration<T_sex>
