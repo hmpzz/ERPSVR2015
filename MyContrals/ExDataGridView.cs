@@ -26,9 +26,9 @@ namespace MyContrals
         public ExDataGridView()
         {
             InitializeComponent();
-            this.AutoGenerateColumns = false; //不给Grid增加扩展列
-            this.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect; //默认选中整行。
-            this.RowHeadersVisible = false; //不显示RowHeaders
+            //this.AutoGenerateColumns = false; //不给Grid增加扩展列
+            //this.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect; //默认选中整行。
+            //this.RowHeadersVisible = false; //不显示RowHeaders
 
         }
 

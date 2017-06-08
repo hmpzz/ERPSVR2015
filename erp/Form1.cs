@@ -32,10 +32,12 @@ namespace erp
         private void button1_Click(object sender, EventArgs e)
         {
             
-            bb =  db.T_sex.ToList();
-            BindingList<T_sex> Bsex = new BindingList<T_sex>(bb);
-            //Bsex.Add(bb);
-            
+            bb =  db.T_sex.OrderBy(d=>d.sex_name).ToList();
+            //BindingList<T_sex> Bsex = new BindingList<T_sex>(bb);
+
+            BindingSource BindingSource1 = new BindingSource();
+
+            BindingSource1.DataSource = bb;
 
 
             var sex = db.T_sex.ToList();
@@ -43,15 +45,22 @@ namespace erp
             //Console.WriteLine(db.Sys_Menu.Max(d => d.Menu_NO.Length));
             //printSysMenu(SM);
 
-            this.exDataGridView1.DataSource = Bsex;
+            this.exDataGridView1.DataSource = BindingSource1;
 
             if (this.exDataGridView1.Columns.Count==0)
             {
-                this.exDataGridView1.AddColumn("sex_no", "性别编号", Aligment: DataGridViewContentAlignment.MiddleLeft);
+                this.exDataGridView1.AddColumn("sex_no", "性别编号", Aligment: DataGridViewContentAlignment.MiddleLeft,IFReadOnly:false);
                 this.exDataGridView1.AddColumn("sex_name", "性别", Aligment: DataGridViewContentAlignment.MiddleLeft, IFReadOnly: false);
             }
-            
 
+
+            this.exDataGridView1.AllowUserToAddRows = true;
+            this.exDataGridView1.AllowUserToDeleteRows = true;
+            this.exDataGridView1.AllowUserToOrderColumns = true;
+            this.exDataGridView1.RowHeadersVisible = true;
+
+
+            this.dataGridView1.DataSource = BindingSource1;
 
             
             //this.exDataGridView1.AddColumn()
@@ -82,7 +91,7 @@ namespace erp
                 Console.WriteLine("id--{0},sex_no--{1},sex_name--{2}", item.id,item.sex_no, item.sex_name);
 
 
-            }
+            }   
             
         }
 
