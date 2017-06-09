@@ -19,7 +19,7 @@ namespace erp
 
 
         List<T_sex> bb;
-        
+        List<Tsexa> cc;
 
 
         public Form1()
@@ -27,7 +27,22 @@ namespace erp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 测试扩展类
+        /// </summary>
+        partial class Tsexa : T_sex
+        {
+ 
+            public string aa { get; set; }
+
+        }
+
+
         
+
+
+    
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -45,13 +60,19 @@ namespace erp
             //Console.WriteLine(db.Sys_Menu.Max(d => d.Menu_NO.Length));
             //printSysMenu(SM);
 
-            this.exDataGridView1.DataSource = BindingSource1;
+            //this.exDataGridView1.DataSource = BindingSource1;
 
-            if (this.exDataGridView1.Columns.Count==0)
-            {
+            this.exDataGridView1.DataSource = new Class1.BindingCollection<T_sex>(bb);
+            //dataGridView1.DataSource = new BindingCollection<Person>(people);
+
+            this.exDataGridView1.Columns.Clear();
+
+
                 this.exDataGridView1.AddColumn("sex_no", "性别编号", Aligment: DataGridViewContentAlignment.MiddleLeft,IFReadOnly:false);
                 this.exDataGridView1.AddColumn("sex_name", "性别", Aligment: DataGridViewContentAlignment.MiddleLeft, IFReadOnly: false);
-            }
+            
+
+            this.exDataGridView1.Columns.Add("aa", "aa");//这行没啥用，就是为了加一列显示一些自己需要的内容，只加到DataGridView上就好，不需要扩展类
 
 
             this.exDataGridView1.AllowUserToAddRows = true;
@@ -60,9 +81,9 @@ namespace erp
             this.exDataGridView1.RowHeadersVisible = true;
 
 
-            this.dataGridView1.DataSource = BindingSource1;
-
             
+
+
             //this.exDataGridView1.AddColumn()
         }
 
@@ -82,6 +103,7 @@ namespace erp
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //打印这个类里的东西
             var aa = (IList<Model.T_sex>)this.exDataGridView1.DataSource;
 
             
@@ -95,30 +117,33 @@ namespace erp
             
         }
 
+
+        
+
         private void button4_Click(object sender, EventArgs e)
         {
-            //IList list = (IList)this.exDataGridView1.DataSource; //转换数据源  
-            //list.RemoveAt(exDataGridView1.CurrentRow.Index);//移除
-            //exDataGridView1.DataSource = null; //为空  
-            //exDataGridView1.DataSource = list;//显示数据
+            ////IList list = (IList)this.exDataGridView1.DataSource; //转换数据源  
+            ////list.RemoveAt(exDataGridView1.CurrentRow.Index);//移除
+            ////exDataGridView1.DataSource = null; //为空  
+            ////exDataGridView1.DataSource = list;//显示数据
 
             
 
-            using (Dal.Context db = new Dal.Context())
-            {
+            //using (Dal.Context db = new Dal.Context())
+            //{
                 
 
-                    IList<T_sex> list = (IList<T_sex>)this.exDataGridView1.DataSource;
+            //        IList<T_sex> list = (IList<T_sex>)this.exDataGridView1.DataSource;
 
                 
 
-                  //  db.Entry(list[2]).State = System.Data.Entity.EntityState.Detached;//指定状态为更新  
-                                                                                  //db.SaveChanges();//保存  
+            //      //  db.Entry(list[2]).State = System.Data.Entity.EntityState.Detached;//指定状态为更新  
+            //                                                                      //db.SaveChanges();//保存  
 
-                exDataGridView1.DataSource = null; //为空  
-                exDataGridView1.DataSource = list;//显示数据
+            //    exDataGridView1.DataSource = null; //为空  
+            //    exDataGridView1.DataSource = list;//显示数据
 
-            }
+            //}
 
 
         }
@@ -130,10 +155,12 @@ namespace erp
             sex.sex_no = 2;
             sex.sex_name = "男"  ;
 
-             ((IList<T_sex>)this.exDataGridView1.DataSource).Insert(this.exDataGridView1.Rows.Count , sex);
+             //((IList<T_sex>)this.exDataGridView1.DataSource).Insert(this.exDataGridView1.SelectedRows[0].Index,sex);
 
-            
-                 db.Entry(((T_sex)this.exDataGridView1.Rows[this.exDataGridView1.Rows.Count-1 ].DataBoundItem)).State = System.Data.Entity.EntityState.Added;
+            ((IList<T_sex>)this.exDataGridView1.DataSource).Add(sex);
+
+            db.Entry(sex).State = System.Data.Entity.EntityState.Added;
+            //db.Entry(((T_sex)this.exDataGridView1.Rows[this.exDataGridView1.NewRowIndex].DataBoundItem)).State = System.Data.Entity.EntityState.Added;
 
 
            //this.exDataGridView1.Refresh();
@@ -147,23 +174,78 @@ namespace erp
 
         private void button7_Click(object sender, EventArgs e)
         {
-            //db.Entry(bb[0]).State = System.Data.Entity.EntityState.Deleted;
 
-            //this.exDataGridView1.Refresh();
-
-            db.Entry(((T_sex)this.exDataGridView1.Rows[0].DataBoundItem)).State = System.Data.Entity.EntityState.Deleted;
-            this.exDataGridView1.Rows.RemoveAt(0);
+            //db.Entry(((T_sex)this.exDataGridView1.Rows[0].DataBoundItem)).State = System.Data.Entity.EntityState.Deleted;
             
-            //List<T_sex> list = (List<T_sex>)this.exDataGridView1.DataSource;
+            db.T_sex.Remove((T_sex)this.exDataGridView1.Rows[0].DataBoundItem);
 
-            //list.RemoveAt(0);
+            this.exDataGridView1.Rows.RemoveAt(0);//用命令删除必须删除这行，只删除list这行还是有
 
-            //this.exDataGridView1.Rows.RemoveAt(0);
 
-            //BindingList<T_sex> Bsex = (BindingList<T_sex>)this.exDataGridView1.DataSource;
 
-            //db.Entry(this.exDataGridView1.DataSource).State = System.Data.Entity.EntityState.Deleted;
-            //db.Entry((BindingList<T_sex>)this.exDataGridView1.DataSource)
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ((T_sex)this.exDataGridView1.SelectedRows[0].DataBoundItem).sex_name = "其他";
+
+           
+
+            //db.Entry(((T_sex)this.exDataGridView1.SelectedRows[0].DataBoundItem)).State = System.Data.Entity.EntityState.Modified;
+
+            //this.exDataGridView1.SelectedRows[0].Cells["sex_name"].Value = "其他";
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            var aa = from T in db.T_sex
+                     join T1 in (from a in db.T_sex
+                                 group a by a.sex_name into g
+                                 select new
+                                 {
+                                     sex_name = g.Key,
+                                     sexcount = g.Count()
+                                 }) on T.sex_name equals T1.sex_name
+                     select new { T.sex_no, T.sex_name, T1.sexcount };
+
+
+
+
+
+
+            var bb = db.T_sex.Join(db.T_sex
+                                .GroupBy(a => a.sex_name)
+                                .Select(g => new
+                                {
+                                    sex_name = g.Key,
+                                    sexcount = g.Count()
+                                }),
+                                  T => T.sex_name,
+                                  T1 => T1.sex_name,
+                                  (T, T1) =>
+                                     new
+                                     {
+                                         Sex_no = T.sex_no,
+                                         Sex_name = T.sex_name,
+                                         sexcount = T1.sexcount
+                                     }
+                               ).ToList();
+
+
+            foreach (var item in aa)
+            {
+
+                Console.WriteLine("sex_no--{0},sex_name--{1},sexcount--{2}", item.sex_no,item.sex_name,item.sexcount);
+
+
+            }
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

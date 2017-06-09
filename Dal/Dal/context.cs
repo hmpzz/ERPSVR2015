@@ -39,6 +39,9 @@ namespace Dal
         public virtual DbSet<T_xl> T_xl { get; set; }
         public virtual DbSet<Sys_Menu> Sys_Menu { get; set; }
 
+
+        //public virtual DbSet<T_student> T_student { get; set; }
+
         #endregion
 
 

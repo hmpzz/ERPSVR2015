@@ -87,6 +87,18 @@ namespace Bll
                 context.T_HF.AddRange(T_HF);
                 #endregion
 
+                //#region  增加学生数据
+                //var T_STUDENT = new List<T_student>
+                //{
+                //    new T_student {  student_no=1, student_name="学生甲", SX=100,YW=100,YY=100 },
+                //    new T_student {  student_no=2, student_name="学生乙", SX=99,YW=99,YY=99 },
+                //    new T_student {  student_no=3, student_name="学生丙", SX=98,YW=98,YY=98 },
+                //    new T_student {  student_no=4, student_name="学生丁", SX=97,YW=97,YY=97 }
+                //};
+                //context.T_student.AddRange(T_STUDENT);
+                //#endregion  
+
+
 
                 try
                 {
@@ -98,7 +110,8 @@ namespace Bll
                     Console.WriteLine(dbex.Message);
                 }
 
-             
+
+          
 
 
 
