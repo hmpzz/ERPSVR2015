@@ -48,10 +48,10 @@
             this.ID_公司基本信息 = new System.Windows.Forms.ToolStripMenuItem();
             this.ID_系统 = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.aaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.aaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -150,30 +150,30 @@
             // ID_系统用户权限
             // 
             this.ID_系统用户权限.Name = "ID_系统用户权限";
-            this.ID_系统用户权限.Size = new System.Drawing.Size(174, 26);
+            this.ID_系统用户权限.Size = new System.Drawing.Size(181, 26);
             this.ID_系统用户权限.Text = "系统用户权限";
             // 
             // ID_系统角色权限
             // 
             this.ID_系统角色权限.Name = "ID_系统角色权限";
-            this.ID_系统角色权限.Size = new System.Drawing.Size(174, 26);
+            this.ID_系统角色权限.Size = new System.Drawing.Size(181, 26);
             this.ID_系统角色权限.Text = "系统角色权限";
             // 
             // ToolStripMenuItem1
             // 
             this.ToolStripMenuItem1.Name = "ToolStripMenuItem1";
-            this.ToolStripMenuItem1.Size = new System.Drawing.Size(171, 6);
+            this.ToolStripMenuItem1.Size = new System.Drawing.Size(178, 6);
             // 
             // ID_月结日期设定
             // 
             this.ID_月结日期设定.Name = "ID_月结日期设定";
-            this.ID_月结日期设定.Size = new System.Drawing.Size(174, 26);
+            this.ID_月结日期设定.Size = new System.Drawing.Size(181, 26);
             this.ID_月结日期设定.Text = "月结日期设定";
             // 
             // ID_公司基本信息
             // 
             this.ID_公司基本信息.Name = "ID_公司基本信息";
-            this.ID_公司基本信息.Size = new System.Drawing.Size(174, 26);
+            this.ID_公司基本信息.Size = new System.Drawing.Size(181, 26);
             this.ID_公司基本信息.Text = "公司基本信息";
             // 
             // ID_系统
@@ -205,6 +205,13 @@
             this.MenuStrip1.TabIndex = 11;
             this.MenuStrip1.Text = "MenuStrip1";
             // 
+            // aaToolStripMenuItem
+            // 
+            this.aaToolStripMenuItem.Name = "aaToolStripMenuItem";
+            this.aaToolStripMenuItem.Size = new System.Drawing.Size(37, 24);
+            this.aaToolStripMenuItem.Text = "aa";
+            this.aaToolStripMenuItem.Click += new System.EventHandler(this.aaToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -227,13 +234,6 @@
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 20);
-            // 
-            // aaToolStripMenuItem
-            // 
-            this.aaToolStripMenuItem.Name = "aaToolStripMenuItem";
-            this.aaToolStripMenuItem.Size = new System.Drawing.Size(37, 24);
-            this.aaToolStripMenuItem.Text = "aa";
-            this.aaToolStripMenuItem.Click += new System.EventHandler(this.aaToolStripMenuItem_Click);
             // 
             // MDIForm
             // 

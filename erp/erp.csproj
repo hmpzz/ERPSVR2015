@@ -55,6 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MDIForm.resx">
       <DependentUpon>MDIForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +104,10 @@
       <Project>{970b6f31-1c76-480c-84ea-be04927c7d19}</Project>
       <Name>Bll</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Dal\Dal\Dal.csproj">
+      <Project>{b4bce945-ead6-436c-a348-a23d91bcd49d}</Project>
+      <Name>Dal</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Helper\Helper\Helper.csproj">
       <Project>{3144dcb5-ae3c-432a-95cb-08a58a531d1d}</Project>
       <Name>Helper</Name>
@@ -101,6 +115,10 @@
     <ProjectReference Include="..\Model\Model\Model.csproj">
       <Project>{5580f7a7-7d28-4adc-8935-57ae48473f3f}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyContrals\MyContrals.csproj">
+      <Project>{16C8FC7B-5824-42C0-88EA-DC6F10A09DD4}</Project>
+      <Name>MyContrals</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

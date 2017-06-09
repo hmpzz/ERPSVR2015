@@ -16,6 +16,12 @@ namespace Model
     public class T_bm
     {
 
+
+        public T_bm()
+        {
+            T_users = new HashSet<T_user>();
+        }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //自增长列
         public int id { get; set; }
 
@@ -33,7 +39,7 @@ namespace Model
         /// <summary>
         /// 对应的员工对象
         /// </summary>
-        public virtual ICollection<T_user> T_user { get; set; }
+        public virtual ICollection<T_user> T_users { get; set; }
 
 
     }
@@ -44,9 +50,9 @@ namespace Model
         public T_bmMap()
         {
 
-            HasMany(d => d.T_user)
+            HasMany(d => d.T_users)
                   .WithRequired()
-                  .HasForeignKey(p => p.BM);
+                  .HasForeignKey(p => p.T_bm);
         }
     }
 }

@@ -15,6 +15,10 @@ namespace Model
     /// </summary>
     public class T_xl
     {
+        public T_xl()
+        {
+            T_users = new HashSet<T_user>();
+        }
 
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //自增长列
@@ -34,7 +38,7 @@ namespace Model
         /// <summary>
         /// 对应的员工对象
         /// </summary>
-        public virtual ICollection<T_user> T_user { get; set; }
+        public virtual ICollection<T_user> T_users { get; set; }
 
     }
 
@@ -46,7 +50,7 @@ namespace Model
         public T_xlMap()
         {
 
-            HasMany(d => d.T_user)
+            HasMany(d => d.T_users)
                   .WithRequired()
                   .HasForeignKey(p => p.xl);
         }

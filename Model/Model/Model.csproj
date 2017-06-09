@@ -57,6 +57,7 @@
     <Compile Include="T_bm.cs" />
     <Compile Include="T_hf.cs" />
     <Compile Include="T_sex.cs" />
+    <Compile Include="T_student.cs" />
     <Compile Include="T_user.cs" />
     <Compile Include="T_xl.cs" />
   </ItemGroup>

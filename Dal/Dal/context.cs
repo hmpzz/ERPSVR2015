@@ -23,18 +23,29 @@ namespace Dal
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new Sys_MenuMap());
+
+            modelBuilder.Configurations.Add(new T_sexMap());
             
         }
 
-        public virtual DbSet<T_user> T_userSet { get; set; }
-        public virtual DbSet<T_sex> T_sexSet { get; set; }
-        public virtual DbSet<T_hf> T_HFSet { get; set; }
-        public virtual DbSet<T_bm> t_BMSet { get; set; }
-        public virtual DbSet<T_xl> T_xlSet { get; set; }
+
+        #region 生成表的部分
+
+        public virtual DbSet<T_user> T_user { get; set; }
+        public virtual DbSet<T_sex> T_sex { get; set; }
+        public virtual DbSet<T_hf> T_HF { get; set; }
+        public virtual DbSet<T_bm> t_BM { get; set; }
+        public virtual DbSet<T_xl> T_xl { get; set; }
+        public virtual DbSet<Sys_Menu> Sys_Menu { get; set; }
 
 
+        //public virtual DbSet<T_student> T_student { get; set; }
+
+        #endregion
 
 
+        #region 解密后得到连接字符串
         /// <summary>
         /// 得到解密后的连接字符串
         /// </summary>
@@ -51,8 +62,11 @@ namespace Dal
             return connstr;
             
         }
+        #endregion
+
+
     }
 
 
-   
+
 }
