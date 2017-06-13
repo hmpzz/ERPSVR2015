@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Context.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T_sex_DAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

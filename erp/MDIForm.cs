@@ -9,6 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+using Bll;
+
+
 namespace erp
 {
     public partial class MDIForm : Form
@@ -21,6 +25,8 @@ namespace erp
         private void 建立数据库ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
+
+            
             Bll.DataBase.CreateDataBase();
 
             MessageBox.Show("建立完成！");
@@ -28,19 +34,17 @@ namespace erp
 
         private void aaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Console.WriteLine( Helper.SecurityHelper.EncryptDES("Server=localhost;Database=erp;user id=sa;password=tjhmpz801023;"));
-            Dal.Context db = new Dal.Context();
+            
+            //Dal.Context db = new Dal.Context();
 
 
-            var SM = db.Sys_Menu.OrderBy(d => d.menu_index).Where(d => d.Menu_NO == "0"  ).ToList();
-            Console.WriteLine(db.Sys_Menu.Max(d=>d.Menu_NO.Length));
-            printSysMenu(SM);
+            //var SM = db.Sys_Menu.OrderBy(d => d.menu_index).Where(d => d.Menu_NO == "0"  ).ToList();
+            //Console.WriteLine(db.Sys_Menu.Max(d=>d.Menu_NO.Length));
+            //printSysMenu(SM);
 
-            var ff = SM[0].father_menu.Menu_Name.ToString();
+            //var ff = SM[0].father_menu.Menu_Name.ToString();
 
-            //Console.WriteLine(SM[0].father_Sys_menu.Menu_NO);
-
-            //var aa=db.T_user.
+            
 
         }
 

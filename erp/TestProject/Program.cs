@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace erp
+namespace TestProject
 {
     static class Program
     {
@@ -16,8 +16,7 @@ namespace erp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            Application.Run(new MDIForm());
+            Application.Run(new Form1());
         }
     }
 }
