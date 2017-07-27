@@ -457,5 +457,56 @@ namespace MyContrals
         }
         private Color _mergecolumnheaderbackcolor = System.Drawing.SystemColors.Control;
         #endregion
+
+        private void ExDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //找到绑定字段中带下划线的列
+
+            if ((this.Rows[e.RowIndex].DataBoundItem != null) &&
+
+                (this.Columns[e.ColumnIndex].DataPropertyName.Contains(".")))
+
+            {
+
+                //用split方法将其分割成一个数组
+
+                string[] names = this.Columns[e.ColumnIndex].DataPropertyName.Split('.');
+
+                object obj = this.Rows[e.RowIndex].DataBoundItem;//获取到当前记录绑定的类型
+
+                for (int i = 0; i < names.Count(); ++i)
+
+                {
+
+                    try
+
+                    {
+
+                        //通过反射的方式获取当前列的属性值，如StudentName
+
+                        //第一次循环到Student，第二次拿到的是StudentName
+
+                        var result = obj.GetType().GetProperty(names[i]).GetValue(obj, null);
+
+                        obj = result;
+
+                        e.Value = result.ToString();//拿到对应的值
+
+                    }
+
+                    catch (Exception)
+
+                    {
+
+                        return;
+
+                        throw;
+
+                    }
+
+                }
+
+            }
+        }
     }
 }

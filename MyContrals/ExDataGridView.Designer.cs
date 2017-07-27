@@ -39,6 +39,7 @@
             this.AllowUserToDeleteRows = false;
             this.RowTemplate.Height = 27;
             this.Size = new System.Drawing.Size(383, 298);
+            this.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ExDataGridView_CellFormatting);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
